@@ -11,6 +11,7 @@ Another objective of this project is to make the code available for consultation
 - [Symmetric sipherer](#Symmetric-sipherer) <br>
 - [Table of contents](#Table-of-contents)
 - [Usage](#Usage)
+- [Caesar cipher](#Caesar-cipher)
 
 
 ## Usage
@@ -28,22 +29,18 @@ In the project, run the jar. enter the desired algorithm in the following patter
 
 ```algorithm -(c or d) -k (offset number) < \"name of the file to be encrypted.txt\" > \"name of the encrypted file.txt\" ``` 
 
-algorithm:
-- cesar
-- vernam
-
-(c or d)
-- c -> cipher
-- d -> decoder
-
-k
-- how many letters will be shifted to the right, with the alpha used being [A-Z][a-z][0-9]
-
-< 
-- Source file name with the text to be encrypted or decrypted
-
-> 
-- Name of the destination file with the text that was encrypted or decrypted
+- algorithm
+  -  cesar
+  -  vernam
+- (c or d)
+  - c -> cipher
+  - d -> decoder
+- k
+  - how many letters will be shifted to the right, with the alpha used being [A-Z][a-z][0-9]
+- < 
+  - Source file name with the text to be encrypted or decrypted
+- \> 
+  - Name of the destination file with the text that was encrypted or decrypted
 
 #### Example
 
@@ -55,7 +52,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry
 Run `java -jar Symmetric\ sipherer.jar` 
 run `cesar -c -k 1 < texto-aberto.txt > texto-cifrado.txt`
 
-// ToDo add image sample
+![cesar_cipher_shift_1](https://github.com/TosinRoger/Symmetric-sipherer/blob/main/screenshot/cesar_cipher_shift_1.png)
 
 The file with the result will be created, with the name `texto-cifrado.txt`
 The result of cipher will be 
