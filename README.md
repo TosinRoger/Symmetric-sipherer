@@ -6,14 +6,63 @@ The aim of this project is the study of symmetric cryptography. Implemented in J
   
 Another objective of this project is to make the code available for consultation, as it is a code made in a school environment, it is not properly standardized. Whether with English text, correctly separated the layers of the MVC project, there is also a lot of code smell.
 
+## Table of contents
 
-## How to run
+- [Symmetric sipherer](#Symmetric-sipherer) <br>
+- [Table of contents](#Table-of-contents)
+- [Usage](#Usage)
+
+
+## Usage
 In 2021, the project was refactored to run on Java 8.
 
-A priori, just run the project in a Java IDE, and place the cipher and key files in the project's root folder.
+A priori, just run the project in a Java IDE and place the cipher and key files in the project's root folder.
 
 Another way to run the project is to run the file `Symmetric sipherer.jar` on the terminal 
 ``java -jarSymmetric\ sipherer.jar``. Remember put files `chave.txt` and `texto-aberto.txt` in the same folder of `.jar`
+
+### Caesar cipher
+In cryptography, a Caesar cipher, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
+
+In the project, run the jar. enter the desired algorithm in the following pattern:
+
+```algorithm -(c or d) -k (offset number) < \"name of the file to be encrypted.txt\" > \"name of the encrypted file.txt\" ``` 
+
+algorithm:
+- cesar
+- vernam
+
+(c or d)
+- c -> cipher
+- d -> decoder
+
+k
+- how many letters will be shifted to the right, with the alpha used being [A-Z][a-z][0-9]
+
+< 
+- Source file name with the text to be encrypted or decrypted
+
+> 
+- Name of the destination file with the text that was encrypted or decrypted
+
+#### Example
+
+Create the `chave.txt` file with the following `text This is the key`
+Create the `texto-aberto` file with the following 
+```
+Lorem Ipsum is simply dummy text of the printing and typesetting industry
+```
+Run `java -jar Symmetric\ sipherer.jar` 
+run `cesar -c -k 1 < texto-aberto.txt > texto-cifrado.txt`
+
+// ToDo add image sample
+
+The file with the result will be created, with the name `texto-cifrado.txt`
+The result of cipher will be 
+```
+Mpsfn Jqtvn jt tjnqmz evnnz ufyu pg uif qsjoujoh boe uzqftfuujoh joevtusz
+```
+All text has been shifted one letter to the right in the alphabet. L -> M, o -> p, r -> s, e -> f, m -> m, etc.
 
 ## How to generate the key?
 - The character map [AZ][az][0-9] is used and checks the position of the message letter and the position of the key letter, if the sum of these two positions is smaller than the size of the character map , uses the sum to generate the new character. If the sum is larger, the difference between the sum and the size of the map is used, and starts counting from the beginning of the list from that difference.
