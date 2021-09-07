@@ -23,6 +23,8 @@ public class CipherCesar {
 
 			SaveFile save = new SaveFile();
 			save.saveFile(result, txtOpen[7]);
+
+			new FrequencyAnalyzer().execute(file, result);
 		}
 	}
 

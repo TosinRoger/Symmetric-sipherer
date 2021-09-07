@@ -42,7 +42,7 @@ public class FrequencyAnalyzer {
         freqTable.put("z", (float) 00.47);
     }
 
-    public void execute(String txtInput) {
+    public void execute(String txtInput, String txtOutput) {
 
         // mapa de recorrencia das letras
         HashMap<String, Integer> recurrence = countRecurrence(txtInput);
@@ -56,13 +56,10 @@ public class FrequencyAnalyzer {
         // deixa em modulo se for negativo (geralmente eh)
         distance = Math.abs(distance);
 
-        // abrir cesar com k == distance
-        String result = new CipherCesar().internalCall(txtInput, distance);
-
         new PrintInScreen().showAnalyzer(
                 mapToString(),
                 txtInput,
-                result,
+                txtOutput,
                 recurrence.toString(),
                 mapFrequencyRecurrence(recurrence, txtInput.length()).toString(),
                 letter,

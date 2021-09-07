@@ -13,7 +13,7 @@ public class PrintInScreen {
 		System.out.println("Tamanho do texto: " + msgOutput.length());
 		System.out.println("A letra que mais aparece eh: " + letterMoreAppear);
 		System.out.println("Esta a " + k + " letras de distancia do 'a' ou do 'A', levando em considerecao se eh maiuscula ou nao");
-		System.out.println("Recorrencia no texto: ");
+		System.out.println("Recorrencia no texto original: ");
 		System.out.println(recurrenceMap);
 		System.out.println("Frequencia do caracter no texto: ");
 		System.out.println(freqRecurrence);

@@ -33,7 +33,7 @@ public class CifradorVernam {
 				
 				// mostrar resultados e analise de frequencia
 				
-				new FrequencyAnalyzer().execute(result);
+				new FrequencyAnalyzer().execute(inputText, result);
 			}
 			else {
 				System.out.println("Chave ou texto vazio");
@@ -53,7 +53,7 @@ public class CifradorVernam {
 				save.saveFile(result, input[6]);
 				
 				// mostrar resultados e analise de frequencia
-				new FrequencyAnalyzer().execute(result);
+				new FrequencyAnalyzer().execute(inputText, result);
 			}
 		}
 	}
@@ -150,7 +150,6 @@ public class CifradorVernam {
 			else {
 				txtChiper += text.charAt(i);
 			}
-
 		}
 		
 		return txtChiper;
@@ -166,7 +165,6 @@ public class CifradorVernam {
 		String txtChiper = "";
 		
 		List<Character> alphabet = mapLetter();
-		
 		
 		for (int i = 0; i < text.length(); i++) {
 			int posCharMsg = fetchPositionLetter(text.charAt(i));
@@ -192,7 +190,6 @@ public class CifradorVernam {
 			else {
 				txtChiper += text.charAt(i);
 			}
-
 		}
 		
 		return txtChiper;

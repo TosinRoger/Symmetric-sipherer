@@ -115,7 +115,7 @@ public class SelectAlgorithm {
             case 5:
                 String parse = txtOpen.substring(13);
                 FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
-                frequencyAnalyzer.execute(parse);
+                frequencyAnalyzer.execute(parse, parse);
                 break;
             default:
                 break;
